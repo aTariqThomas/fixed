@@ -1,6 +1,24 @@
 .text 
 main:
 li $v0, 11  # Loads character
+la $a0, 64 #'@'
+syscall
+addi $a0,$a0,-16 # '0'
+syscall
+addi $a0,$a0,2 #'2'
+syscall
+addi $a0,$a0,6 #'8'
+syscall 
+addi $a0,$a0,-4 #'4'
+syscall
+addi $a0,$a0,1 #'5'
+syscall
+addi $a0,$a0,2 #'7'
+syscall
+addi $a0,$a0,-4 #'3'
+syscall
+addi $a0,$a0,6 #'9'
+syscall
 la $a0, 84 # T
 syscall 
 addi $a0,$a0,20 # h
@@ -29,4 +47,5 @@ addi $a0,$a0,8 # q
 syscall 
 li $v0, 10 #Exit Call
 syscall 
+ 
  
