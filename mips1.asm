@@ -1,9 +1,11 @@
 .text 
 main:
 li $v0, 11  # Loads character
+syscall 
 la $a0, 64 #'@'
 syscall
-addi $a0,$a0,-16 # '0'
+li $v0, 1
+addi $a0,$a0,-64 # '0'
 syscall
 addi $a0,$a0,2 #'2'
 syscall
@@ -19,7 +21,11 @@ addi $a0,$a0,-4 #'3'
 syscall
 addi $a0,$a0,6 #'9'
 syscall
-la $a0, 84 # T
+
+addi $v0, $zero, 11
+addi $a0, $a0, 1
+syscall 
+addi $a0,$a0, 74 # T
 syscall 
 addi $a0,$a0,20 # h
 syscall 
@@ -34,8 +40,8 @@ syscall
 addi $a0,$a0,-71 # ','
 syscall 
 addi $a0,$a0,-12 # space 
-li $v0,11
-la $a0, 84  #Puts T in the register
+syscall 
+addi $a0, $a0,52  #Puts T in the register
 syscall #Executes the call
 addi $a0,$a0,13 #Puts a in the Register 
 syscall 
